@@ -142,6 +142,12 @@ class UsersAdmin(BaseAPI):
                              'resend': resend
                          })
 
+    def deactivate(self, user_id):
+        return self.post('users.admin.setInactive',
+                         params={
+                             'user': user_id
+                         })
+
 
 class Users(BaseAPI):
     def __init__(self, *args, **kwargs):
